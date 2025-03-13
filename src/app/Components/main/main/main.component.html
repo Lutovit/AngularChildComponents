@@ -1,0 +1,134 @@
+
+
+
+
+
+<br>
+<br>
+<app-html-to-pdf-1></app-html-to-pdf-1>
+
+
+
+<br>
+<br>
+<app-modal></app-modal>
+<br>
+<br>
+<app-ngx-bootstrap></app-ngx-bootstrap>
+<br/>
+<br/>
+
+<app-group-nested-into-array></app-group-nested-into-array>
+
+<br/>
+<br/>
+
+<app-ck-editor></app-ck-editor>
+<app-editor-js></app-editor-js>
+
+
+<br/>
+<br/>
+
+
+<mat-card appearance="outlined" class="mx-3">
+  <mat-card-header>
+      <mat-card-title>
+        Корневой элемент - пояснительная записка 
+        <button mat-stroked-button (click)="toggle()" class="m-2 button-toggle">{{state}}</button>        
+      </mat-card-title>
+      <mat-card-subtitle></mat-card-subtitle>
+  </mat-card-header>
+
+  <mat-card-content [@bodyExpansion]="state" class="expandable-content">
+    <app-number-and-year></app-number-and-year>
+    <app-explanatory-note-modifications [rootState]="state"></app-explanatory-note-modifications>
+  </mat-card-content>
+
+  <mat-card-actions></mat-card-actions>
+  
+  <mat-card-footer></mat-card-footer>
+</mat-card>
+
+<br>
+<br>
+
+
+<div><h3>Second_element</h3></div>
+<div></div>
+<mat-expansion-panel id="second_element">
+    
+  <mat-expansion-panel-header>
+    <mat-panel-title> Корневой элемент - пояснительная записка V2</mat-panel-title> 
+  </mat-expansion-panel-header>
+
+
+  <app-number-and-year (onFormChanged)="numberAndYearChanged($event)"></app-number-and-year>
+  <app-explanatory-note-modifications-v2 (onFormChanged)="modifocationsChanged($event)"></app-explanatory-note-modifications-v2>
+  <app-explanatory-note-issue-author (onFormChanged)="authorChanged($event)"></app-explanatory-note-issue-author>
+  
+
+  <mat-action-row>
+    <button mat-stroked-button (click)="submit()" class="m-2 button-sm">Отправить</button>
+  </mat-action-row>
+
+</mat-expansion-panel>
+
+
+
+<br/>
+<br/>
+<app-custom-component-array></app-custom-component-array>
+<br/>
+<br/>
+
+<input type="text" [(ngModel)]="name"/>
+<p>Age2 = {{age2}}</p>
+<input type="number" [(ngModel)]="age"/>
+
+<app-child [userName]="name" [userAge]="age" (onChangedAge)="onChangedAge($event)" [(twoWayBinding)]="twoWayBindingText" #child></app-child>
+
+<div> 
+  <p>twoWayBinding = {{twoWayBindingText}}</p>
+</div>
+<button class="btn btn-outline-success" (click)="child.increment()">+</button>
+<button class="btn btn-outline-success" (click)="child.decrement()">-</button><br/>
+
+<button class="btn btn-outline-success" (click)="increment()">+</button>
+<button class="btn btn-outline-success" (click)="decrement()">-</button><br/>
+
+<p #someText_template_var>{{someText}}</p>
+<p>{{someText_template_var.textContent}}</p>
+<button class="btn btn-outline-success"  (click)="change()">Изменить SomeText</button>
+
+<br/>
+<br/>
+
+<h3>First_element</h3>
+<mat-card appearance="outlined" class="mx-3" id="first_element">
+    
+  <mat-card-header>
+      <mat-card-title></mat-card-title>
+      <mat-card-subtitle></mat-card-subtitle>
+  </mat-card-header>
+
+  <mat-card-content>
+    <app-reactiv-child  (onFormSubmited)="formSubmited($event)"></app-reactiv-child>
+  </mat-card-content>
+
+  <mat-card-actions></mat-card-actions>
+
+  <mat-card-footer></mat-card-footer>
+</mat-card>
+
+
+
+<br>
+<br>
+<mat-form-field>
+  <mat-label>Choose a date</mat-label>
+  <input matInput [matDatepicker]="picker">
+  <mat-hint>MM/DD/YYYY</mat-hint>
+  <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+  <mat-datepicker #picker></mat-datepicker>
+</mat-form-field>

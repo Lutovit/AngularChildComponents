@@ -1,0 +1,71 @@
+<form [formGroup]="form" novalidate>
+    <mat-expansion-panel>
+        <mat-expansion-panel-header>
+            <mat-panel-title>Индивидуальный предприниматель</mat-panel-title>
+        </mat-expansion-panel-header>
+
+        <mat-form-field appearance="outline" class="inputWidth_100 mb-1">
+            <mat-label>Фамилия</mat-label>
+            <input matInput placeholder="Введите фамилию: " formControlName="familyName" 
+            [(ngModel)]="organization.familyName" (change)="formChanged()">
+
+            @if(form.controls["familyName"].invalid && form.controls["familyName"].touched)
+            {
+                <mat-error class="alert py-0 my-0">Поле обязательно к заполнению</mat-error>
+            }
+
+        </mat-form-field>  
+
+        <mat-form-field appearance="outline" class="inputWidth_100 mb-1">
+            <mat-label>Имя</mat-label>
+            <input matInput placeholder="Введите имя: " formControlName="firstName" 
+            [(ngModel)]="organization.firstName" (change)="formChanged()">
+
+            @if(form.controls["firstName"].invalid && form.controls["firstName"].touched)
+            {
+                <mat-error class="alert py-0 my-0">Поле обязательно к заполнению</mat-error>
+            }
+
+        </mat-form-field> 
+
+        <mat-form-field appearance="outline" class="inputWidth_100 mb-1">
+            <mat-label>Отчество</mat-label>
+            <input matInput placeholder="Введите отчество: " formControlName="secondName" 
+            [(ngModel)]="organization.secondName" (change)="formChanged()">
+
+            @if(form.controls["secondName"].invalid && form.controls["secondName"].touched)
+            {
+                <mat-error class="alert py-0 my-0">Поле обязательно к заполнению</mat-error>
+            }
+
+        </mat-form-field> 
+        
+        <mat-form-field appearance="outline" class="inputWidth_100 mb-1">
+            <mat-label>Основной государственный регистрационный номер индивидуального предпринимателя</mat-label>
+            <input matInput placeholder="Введите ОГРНИП: " formControlName="oGRNIP" 
+            [(ngModel)]="organization.oGRNIP" (change)="formChanged()">
+
+            @if(form.controls["oGRNIP"].invalid && form.controls["oGRNIP"].touched)
+            {
+                <mat-error class="alert py-0 my-0">Поле обязательно к заполнению</mat-error>
+            }
+
+        </mat-form-field> 
+        
+
+        <app-post-address (onFormChanged)="addressChanged($event)"></app-post-address>
+
+
+        <mat-form-field appearance="outline" class="inputWidth_100 mt-3">
+            <mat-label>Адрес электронной почты юридического лица</mat-label>
+            <input matInput placeholder="Введите Email: " formControlName="email" 
+            [(ngModel)]="organization.email" (change)="formChanged()">
+
+            @if(form.controls["email"].invalid && form.controls["email"].touched)
+            {
+                <mat-error class="alert py-0 my-0">Поле обязательно к заполнению</mat-error>
+            }
+
+        </mat-form-field> 
+    </mat-expansion-panel>
+</form>

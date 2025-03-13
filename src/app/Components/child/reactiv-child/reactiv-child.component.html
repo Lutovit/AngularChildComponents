@@ -1,0 +1,58 @@
+<form [formGroup]="form" novalidate (ngSubmit)="submit()">
+    <div>
+        <mat-form-field appearance="outline">
+            <mat-label>Имя</mat-label>
+            <input matInput placeholder="Введите имя: " formControlName="userName">
+        </mat-form-field>
+
+        @if(form.controls["userName"].invalid && form.controls["userName"].touched){
+        <div class="alert">Не указано имя</div>
+        }
+    </div>
+    <div>     
+        <mat-form-field appearance="outline">
+            <mat-label>Email</mat-label>
+            <input matInput placeholder="Введите email: " formControlName="userEmail">
+        </mat-form-field>
+
+        @if(form.controls["userEmail"].invalid && form.controls["userEmail"].touched){
+        <div class="alert">Некорректный email</div>
+        }
+    </div>
+
+    <mat-card appearance="outlined" class="mx-3">
+        <mat-card-header>
+            <mat-card-title> Phone numbers</mat-card-title>
+            <mat-card-subtitle>You can add or remove numbers here.</mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-content>
+
+            <div formArrayName="phones">
+                @for(phone of getFormsControls()["controls"]; track $index){
+                    <div>
+                        <label>Телефон</label><br>
+                        <input formControlName="{{$index}}" />
+                    </div>
+                }
+            </div>
+
+        </mat-card-content>
+        <mat-card-actions>
+            <button mat-stroked-button (click)="addPhone()" class="m-2 button-sm">+</button>
+            <button mat-stroked-button (click)="removePhone()" class="m-2 button-sm">-</button>
+        </mat-card-actions>
+        <mat-card-footer>
+            This is footer =).
+        </mat-card-footer>
+    </mat-card>
+
+
+    <button mat-stroked-button [disabled]="form.invalid" class="m-2">Отправить</button>
+</form>
+<br/>
+<br/>
+
+
+  
+
+

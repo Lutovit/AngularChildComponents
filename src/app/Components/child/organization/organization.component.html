@@ -1,0 +1,71 @@
+<form [formGroup]="form" novalidate>
+    <mat-expansion-panel>
+        <mat-expansion-panel-header>
+            <mat-panel-title>Юридическое лицо</mat-panel-title>
+        </mat-expansion-panel-header>
+
+        <mat-form-field appearance="outline" class="inputWidth_100 mb-1">
+            <mat-label>Полное наименование юридического лица</mat-label>
+            <input matInput placeholder="Введите наименование юр.лица: " formControlName="orgFullName" 
+            [(ngModel)]="organization.orgFullName" (change)="formChanged()">
+
+            @if(form.controls["orgFullName"].invalid && form.controls["orgFullName"].touched)
+            {
+                <mat-error class="alert py-0 my-0">Поле обязательно к заполнению</mat-error>
+            }
+
+        </mat-form-field> 
+
+        <mat-form-field appearance="outline" class="inputWidth_100 mb-1">
+            <mat-label>Основной государственный регистрационный номер юридического лица</mat-label>
+            <input matInput placeholder="Введите ОГРН: " formControlName="orgOGRN" 
+            [(ngModel)]="organization.orgOGRN" (change)="formChanged()">
+
+            @if(form.controls["orgOGRN"].invalid && form.controls["orgOGRN"].touched)
+            {
+                <mat-error class="alert py-0 my-0">Поле обязательно к заполнению</mat-error>
+            }
+
+        </mat-form-field> 
+
+        <mat-form-field appearance="outline" class="inputWidth_100 mb-1">
+            <mat-label>Индивидуальный номер налогоплательщика - юридического лица</mat-label>
+            <input matInput placeholder="Введите ИНН: " formControlName="orgINN" 
+            [(ngModel)]="organization.orgINN" (change)="formChanged()">
+
+            @if(form.controls["orgINN"].invalid && form.controls["orgINN"].touched)
+            {
+                <mat-error class="alert py-0 my-0">Поле обязательно к заполнению</mat-error>
+            }
+
+        </mat-form-field> 
+
+        <mat-form-field appearance="outline" class="inputWidth_100 mb-1">
+            <mat-label>Код причины постановки на учет юридического лица</mat-label>
+            <input matInput placeholder="Введите код причины: " formControlName="orgKPP" 
+            [(ngModel)]="organization.orgKPP" (change)="formChanged()">
+
+            @if(form.controls["orgKPP"].invalid && form.controls["orgKPP"].touched)
+            {
+                <mat-error class="alert py-0 my-0">Поле обязательно к заполнению</mat-error>
+            }
+
+        </mat-form-field> 
+        
+
+        <app-address (onFormChanged)="addressChanged($event)"></app-address>
+
+
+        <mat-form-field appearance="outline" class="inputWidth_100 mt-3">
+            <mat-label>Адрес электронной почты юридического лица</mat-label>
+            <input matInput placeholder="Введите Email: " formControlName="email" 
+            [(ngModel)]="organization.email" (change)="formChanged()">
+
+            @if(form.controls["email"].invalid && form.controls["email"].touched)
+            {
+                <mat-error class="alert py-0 my-0">Поле обязательно к заполнению</mat-error>
+            }
+
+        </mat-form-field> 
+    </mat-expansion-panel>
+</form>

@@ -1,0 +1,97 @@
+<form [formGroup]="form" novalidate >
+        
+    <mat-card appearance="outlined" class="mx-3">
+        <mat-card-header>
+            <mat-card-title>
+                Сведения о внесении изменений в проектную документацию
+            <button mat-stroked-button (click)="toggle()" class="m-2 button-toggle">{{state}}</button>        
+            </mat-card-title>
+            <mat-card-subtitle></mat-card-subtitle>
+        </mat-card-header>
+    
+        <mat-card-content [@bodyExpansion]="state" class="expandable-content">
+
+            <mat-card appearance="outlined" class="mx-3">
+                <mat-card-header>
+                    <mat-card-title>
+                        Сведения о внесении изменения в пояснительную записку
+                    <button mat-stroked-button (click)="toggle_2()" class="m-2 button-toggle">{{state_2}}</button>        
+                    </mat-card-title>
+                    <mat-card-subtitle></mat-card-subtitle>
+                </mat-card-header>
+            
+                <mat-card-content [@bodyExpansion]="state_2" class="expandable-content">
+
+                    <div formArrayName="explanatoryNoteModifications">
+                    
+                        @for(phone of getFormsControls()["controls"]; track $index){
+                            <div class="container-fluid" [formGroupName]="$index">                 
+                                <div class="row">
+                                    <div class="col">
+                                        <mat-form-field appearance="outline" class="inputWidth_100 mb-2">
+                                            <mat-label>Номер изменения</mat-label>
+                                            <input matInput placeholder="Введите шифр: " formControlName="modificationNumber">
+
+                                            @if(getFormsControls().controls[$index].get("modificationNumber")?.invalid &&
+                                            getFormsControls().controls[$index].get("modificationNumber")?.touched)
+                                            {
+                                                <mat-error class="alert py-0 my-0">Поле обязательно к заполнению</mat-error>
+                                            }
+                                                                                
+                                        </mat-form-field> 
+                                    </div>
+                                    <div class="col">
+                                        <mat-form-field appearance="outline" class="inputWidth_100 mb-2">
+                                            <mat-label>Дата изменения</mat-label>
+                                            <input matInput placeholder="Введите шифр: " formControlName="modificationDate">   
+                                            
+                                            @if(getFormsControls().controls[$index].get("modificationDate")?.invalid &&
+                                            getFormsControls().controls[$index].get("modificationDate")?.touched)
+                                            {
+                                                <mat-error class="alert py-0 my-0">Поле обязательно к заполнению</mat-error>
+                                            }
+
+                                        </mat-form-field>                                     
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <mat-form-field appearance="outline" class="inputWidth_100 mb-2">
+                                        <mat-label>Описание изменения</mat-label>
+                                        <input matInput placeholder="Введите шифр: " formControlName="modificationNote"> 
+                                        
+                                        @if(getFormsControls().controls[$index].get("modificationNote")?.invalid &&
+                                        getFormsControls().controls[$index].get("modificationNote")?.touched)
+                                        {
+                                            <mat-error class="alert py-0 my-0">Поле обязательно к заполнению</mat-error>
+                                        }
+
+                                    </mat-form-field>                                 
+                                </div>                
+                            </div>                        
+                        }
+                    </div>
+                    
+
+                </mat-card-content>
+            
+                <mat-card-actions [@bodyExpansion]="state_2" class="expandable-content">
+                    <button mat-stroked-button (click)="addModification()" class="m-2 button-sm">+</button>
+                    <button mat-stroked-button (click)="removeModification()" class="m-2 button-sm">-</button>
+                </mat-card-actions>    
+                <mat-card-footer></mat-card-footer>
+            </mat-card>
+
+        </mat-card-content>
+    
+        <mat-card-actions></mat-card-actions>    
+        <mat-card-footer></mat-card-footer>
+    </mat-card>
+
+
+
+</form>
+
+<br>
+<br>
+
+

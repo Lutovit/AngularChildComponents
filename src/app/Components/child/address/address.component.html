@@ -1,0 +1,139 @@
+<form [formGroup]="form" novalidate>
+    <mat-expansion-panel>
+        <mat-expansion-panel-header>
+            <mat-panel-title>Адрес</mat-panel-title>
+        </mat-expansion-panel-header>
+        
+
+        <mat-form-field appearance="outline" class="inputWidth_100 mb-1">
+            <mat-label>Страна</mat-label>
+            <input matInput placeholder="Введите наименование: " formControlName="country" 
+            [(ngModel)]="address.country" (change)="formChanged()">
+
+            @if(form.controls["country"].invalid && form.controls["country"].touched)
+            {
+                <mat-error class="alert py-0 my-0">Поле обязательно к заполнению</mat-error>
+            }
+
+        </mat-form-field> 
+
+
+        <mat-form-field class="inputWidth_100 mb-1">
+            <mat-label>Код субъекта Российской Федерации</mat-label>
+            <mat-select formControlName="region">
+                <mat-option *ngFor="let region of regions; let i = index"
+                 [value]="region.name" (click)="setRegion(region)">
+                    {{region.name}}  {{region.number}} </mat-option>
+            </mat-select>
+        
+            @if(form.controls["region"].invalid && form.controls["region"].touched)
+            {
+                <mat-error class="alert py-0 my-0">Поле обязательно к заполнению</mat-error>
+            }        
+        
+        </mat-form-field> 
+
+
+        <mat-form-field appearance="outline" class="inputWidth_100 mb-1">
+            <mat-label>Наименование района</mat-label>
+            <input matInput placeholder="Введите наименование района: " formControlName="district" 
+            [(ngModel)]="address.district" (change)="formChanged()">
+
+            @if(form.controls["district"].invalid && form.controls["district"].touched)
+            {
+                <mat-error class="alert py-0 my-0">Поле обязательно к заполнению</mat-error>
+            }
+
+        </mat-form-field> 
+
+
+        <mat-form-field appearance="outline" class="inputWidth_100 mb-1">
+            <mat-label>Город</mat-label>
+            <input matInput placeholder="Введите город: " formControlName="city" 
+            [(ngModel)]="address.city" (change)="formChanged()">
+
+            @if(form.controls["city"].invalid && form.controls["city"].touched)
+            {
+                <mat-error class="alert py-0 my-0">Поле обязательно к заполнению</mat-error>
+            }
+
+        </mat-form-field> 
+
+
+        <mat-form-field appearance="outline" class="inputWidth_100 mb-1">
+            <mat-label>Населенный пункт</mat-label>
+            <input matInput placeholder="Введите населенный пункт: " formControlName="settlement" 
+            [(ngModel)]="address.settlement" (change)="formChanged()">
+
+            @if(form.controls["settlement"].invalid && form.controls["settlement"].touched)
+            {
+                <mat-error class="alert py-0 my-0">Поле обязательно к заполнению</mat-error>
+            }
+
+        </mat-form-field> 
+
+
+        <mat-form-field appearance="outline" class="inputWidth_100 mb-1">
+            <mat-label>Улица</mat-label>
+            <input matInput placeholder="Введите улицу: " formControlName="street" 
+            [(ngModel)]="address.street" (change)="formChanged()">
+
+            @if(form.controls["street"].invalid && form.controls["street"].touched)
+            {
+                <mat-error class="alert py-0 my-0">Поле обязательно к заполнению</mat-error>
+            }
+
+        </mat-form-field> 
+
+
+        <mat-form-field appearance="outline" class="inputWidth_100 mb-1">
+            <mat-label>Номер здания/сооружения</mat-label>
+            <input matInput placeholder="Введите номер здания/сооружения: " formControlName="building" 
+            [(ngModel)]="address.building" (change)="formChanged()">
+
+            @if(form.controls["building"].invalid && form.controls["building"].touched)
+            {
+                <mat-error class="alert py-0 my-0">Поле обязательно к заполнению</mat-error>
+            }
+
+        </mat-form-field> 
+
+
+        <mat-form-field appearance="outline" class="inputWidth_100 mb-1">
+            <mat-label>Номер помещения</mat-label>
+            <input matInput placeholder="Введите номер помещения: " formControlName="room" 
+            [(ngModel)]="address.room" (change)="formChanged()">
+
+            @if(form.controls["room"].invalid && form.controls["room"].touched)
+            {
+                <mat-error class="alert py-0 my-0">Поле обязательно к заполнению</mat-error>
+            }
+
+        </mat-form-field> 
+
+
+        <mat-form-field appearance="outline" class="inputWidth_100 mb-1">
+            <mat-label>Неформализованное описание адреса</mat-label>
+            <input matInput placeholder="Введите неформализованный адрес: " formControlName="note" 
+            [(ngModel)]="address.note" (change)="formChanged()">
+
+            @if(form.controls["note"].invalid && form.controls["note"].touched)
+            {
+                <mat-error class="alert py-0 my-0">Поле обязательно к заполнению</mat-error>
+            }
+
+        </mat-form-field> 
+
+        
+
+
+
+
+    </mat-expansion-panel>
+</form>
+
+
+
+
+
+

@@ -1,0 +1,13 @@
+<p>custom-component-array works!</p>
+<!-- custom-form-array.component.html -->
+<form [formGroup]="myForm">
+    <div formArrayName="customComponents">
+      <div *ngFor="let control of customComponents.controls; let i = index" [formGroupName]="i">
+        <!-- Include the custom component and bind its form control -->
+        <app-explanatory-note-issue-author (onFormChanged)="formChanged($event, i)"> </app-explanatory-note-issue-author>
+
+        <button (click)="removeCustomComponent(i)">Remove</button>
+      </div>
+    </div>
+    <button (click)="addCustomComponent()">Add Component</button>
+</form>

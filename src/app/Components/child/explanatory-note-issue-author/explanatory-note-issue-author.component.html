@@ -1,0 +1,86 @@
+<form [formGroup]="form" novalidate>
+    <mat-expansion-panel>
+        <mat-expansion-panel-header>
+            <mat-panel-title>Сведения о лице, подготовившем пояснительную записку - генеральном проектировщике</mat-panel-title>
+        </mat-expansion-panel-header>
+                  
+        <mat-expansion-panel>
+            <mat-expansion-panel-header>
+                <mat-panel-title>Сведения о членстве в СРО</mat-panel-title>    
+            </mat-expansion-panel-header>
+
+            <div formArrayName="sroData">                    
+                @for(item of getFormsControls()["controls"]; track $index)
+                {
+                    <div class="container-fluid" [formGroupName]="$index"> 
+                        <mat-form-field appearance="outline" class="inputWidth_100">
+                            <mat-label>Сведения о саморегулируемой организации</mat-label>
+                            <input matInput placeholder="Введите данные: " formControlName="sroNumber" 
+                            [(ngModel)]="sroDataArray[$index].value" (change)="sroChanged()">
+
+                            @if(getFormsControls().controls[$index].get("value")?.invalid &&
+                            getFormsControls().controls[$index].get("value")?.touched)
+                            {
+                                <mat-error class="alert py-0 my-0">Поле обязательно к заполнению</mat-error>
+                            }                  
+                
+                        </mat-form-field> 
+                        <mat-form-field class="inputWidth_100">
+                            <mat-label>Тип саморегулируемой организации</mat-label>
+                            <mat-select formControlName="sroTypeName">
+                                <mat-option *ngFor="let sroType of sroTypes; let i = index"
+                                 [value]="sroType.name" (click)="sroTypeSelectChanged(sroType, $index)">
+                                    {{sroType.name}}</mat-option>
+                            </mat-select>
+
+                            @if(getFormsControls().controls[$index].get("sroTypeName")?.invalid &&
+                            getFormsControls().controls[$index].get("sroTypeName")?.touched)
+                            {
+                                <mat-error class="alert py-0 my-0">Поле обязательно к заполнению</mat-error>
+                            } 
+
+                        </mat-form-field>                
+                    </div>                        
+                }
+            </div>
+              
+            <mat-action-row>
+                <button mat-stroked-button (click)="addSroDataGroup()" class="m-2 button-sm">+</button>
+                <button mat-stroked-button (click)="removeSroDataGroup()" class="m-2 button-sm">-</button>
+            </mat-action-row>
+     
+    
+        </mat-expansion-panel>
+
+
+        <mat-expansion-panel>
+            <mat-expansion-panel-header>
+                <mat-panel-title>Данные организации</mat-panel-title>    
+            </mat-expansion-panel-header>
+              
+            <label>Тип организации:</label><br>
+            <mat-radio-group>
+                @for (organizationType of organizationTypes; track $index)
+                {
+                    <mat-radio-button  [value]="organizationType.name" (click)="radioGroupChanged(organizationType)">
+                    {{organizationType.name}}</mat-radio-button><br>
+                }
+            </mat-radio-group>
+
+            <div [ngSwitch]="selectedOrganizationType?.type">
+                <div *ngSwitchCase=0><app-organization (onFormChanged)="organizationChanged($event)"></app-organization></div>
+                <div *ngSwitchCase=1><app-foreign-organization (onFormChanged)="organizationChanged($event)"></app-foreign-organization></div>
+                <div *ngSwitchCase=2><app-ip-organization (onFormChanged)="organizationChanged($event)"></app-ip-organization></div>
+                <div *ngSwitchDefault>Выберите тип организации</div>
+            </div>
+
+
+            <br>
+            <br>
+           
+     
+    
+        </mat-expansion-panel>
+
+    </mat-expansion-panel>
+</form>

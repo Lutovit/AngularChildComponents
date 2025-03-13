@@ -1,0 +1,7 @@
+<p>Имя пользователя: {{userName}}</p>
+<p>Возраст пользователя: {{userAge}}</p>
+<div>
+    <label>Two Way Binding:</label><br />
+    <input [ngModel]="twoWayBinding" (ngModelChange)="onTwoWayBindingChange($event)"/>
+    <p>Счётчик = {{counter}}</p>
+</div>

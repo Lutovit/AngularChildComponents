@@ -1,0 +1,28 @@
+<form [formGroup]="form" novalidate>
+    <div class="mb-2">    
+        <mat-form-field appearance="outline" class="inputWidth">
+            <mat-label>Шифр пояснительной записки</mat-label>
+            <input matInput placeholder="Введите шифр: " formControlName="explanatoryNoteNumber" 
+            [(ngModel)]="explanatoryNoteNumber" (change)="formChanged()">
+
+            @if(form.controls["explanatoryNoteNumber"].invalid && form.controls["explanatoryNoteNumber"].touched)
+            {
+                <mat-error class="alert py-0 my-0">Поле обязательно к заполнению</mat-error>
+            }
+
+        </mat-form-field>  
+    </div>
+    <div class="mb-2">  
+        <mat-form-field appearance="outline" class="inputWidth">
+            <mat-label>Год составления пояснительной записки</mat-label>
+            <input matInput placeholder="Введите год: " formControlName="explanatoryNoteYear"
+            [(ngModel)]="explanatoryNoteYear" (change)="formChanged()">
+
+            @if(form.controls["explanatoryNoteYear"].invalid && form.controls["explanatoryNoteYear"].touched)
+            {
+                <mat-error class="alert py-0 my-0">Не правильно указан год.</mat-error>
+            }
+
+        </mat-form-field> 
+    </div>
+</form>

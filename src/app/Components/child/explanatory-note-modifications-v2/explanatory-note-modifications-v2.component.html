@@ -1,0 +1,74 @@
+<form [formGroup]="form" novalidate>
+    <mat-expansion-panel>
+        <mat-expansion-panel-header>
+            <mat-panel-title>Сведения о внесении изменений в проектную документацию</mat-panel-title>
+
+        </mat-expansion-panel-header>
+          
+        <mat-expansion-panel>
+            <mat-expansion-panel-header>
+                <mat-panel-title>Сведения о внесении изменений в пояснительную записку</mat-panel-title>
+    
+            </mat-expansion-panel-header>
+              
+            <div formArrayName="explanatoryNoteModifications">
+                    
+                @for(phone of getFormsControls()["controls"]; track $index){
+                    <div class="container-fluid" [formGroupName]="$index">                 
+                        <div class="row">
+                            <div class="col">
+                                <mat-form-field appearance="outline" class="inputWidth_100 mb-2">
+                                    <mat-label>Номер изменения</mat-label>
+                                    <input matInput placeholder="Введите шифр: " formControlName="modificationNumber"
+                                    [(ngModel)]="modifications[$index].modificationNumber" (change)="formChanged()">
+
+                                    @if(getFormsControls().controls[$index].get("modificationNumber")?.invalid &&
+                                    getFormsControls().controls[$index].get("modificationNumber")?.touched)
+                                    {
+                                        <mat-error class="alert py-0 my-0">Поле обязательно к заполнению</mat-error>
+                                    }
+                                                                        
+                                </mat-form-field> 
+                            </div>
+                            <div class="col">
+                                <mat-form-field appearance="outline" class="inputWidth_100 mb-2">
+                                    <mat-label>Дата изменения</mat-label>
+                                    <input matInput placeholder="Введите шифр: " formControlName="modificationDate"
+                                    [(ngModel)]="modifications[$index].modificationDate" (change)="formChanged()">   
+                                    
+                                    @if(getFormsControls().controls[$index].get("modificationDate")?.invalid &&
+                                    getFormsControls().controls[$index].get("modificationDate")?.touched)
+                                    {
+                                        <mat-error class="alert py-0 my-0">Поле обязательно к заполнению</mat-error>
+                                    }
+
+                                </mat-form-field>                                     
+                            </div>
+                        </div>
+                        <div class="row">
+                            <mat-form-field appearance="outline" class="inputWidth_100 mb-2">
+                                <mat-label>Описание изменения</mat-label>
+                                <input matInput placeholder="Введите шифр: " formControlName="modificationNote"
+                                [(ngModel)]="modifications[$index].modificationNote" (change)="formChanged()"> 
+                                
+                                @if(getFormsControls().controls[$index].get("modificationNote")?.invalid &&
+                                getFormsControls().controls[$index].get("modificationNote")?.touched)
+                                {
+                                    <mat-error class="alert py-0 my-0">Поле обязательно к заполнению</mat-error>
+                                }
+
+                            </mat-form-field>                                 
+                        </div>                
+                    </div>                        
+                }
+            </div>
+
+            <mat-action-row>
+                <button mat-stroked-button (click)="addModification()" class="m-2 button-sm">+</button>
+                <button mat-stroked-button (click)="removeModification()" class="m-2 button-sm">-</button>
+            </mat-action-row>
+    
+        </mat-expansion-panel>
+
+    </mat-expansion-panel>
+</form>
