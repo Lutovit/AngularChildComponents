@@ -4,12 +4,12 @@ import {
   Utils,
   document as document2,
   win
-} from "./chunk-XZJIFW7P.js";
+} from "./chunk-CNZNRO6Q.js";
 import {
   CommonModule,
   DOCUMENT,
   isPlatformBrowser
-} from "./chunk-NNHSEQJ4.js";
+} from "./chunk-YWIITRPA.js";
 import {
   Component,
   Directive,
@@ -48,10 +48,10 @@ import {
   ɵɵprojection,
   ɵɵprojectionDef,
   ɵɵresolveWindow
-} from "./chunk-WJI74WZ2.js";
+} from "./chunk-BUYUE6AN.js";
 import "./chunk-4KQ2WF6L.js";
 
-// node_modules/ngx-bootstrap/focus-trap/fesm2022/ngx-bootstrap-focus-trap.mjs
+// ../../../../node_modules/ngx-bootstrap/focus-trap/fesm2022/ngx-bootstrap-focus-trap.mjs
 function coerceBooleanProperty(value) {
   return value != null && `${value}` !== "false";
 }
@@ -717,7 +717,7 @@ var FocusTrapModule = _FocusTrapModule;
   }], null, null);
 })();
 
-// node_modules/ngx-bootstrap/modal/fesm2022/ngx-bootstrap-modal.mjs
+// ../../../../node_modules/ngx-bootstrap/modal/fesm2022/ngx-bootstrap-modal.mjs
 var _c0 = ["*"];
 var _BsModalRef = class _BsModalRef {
   constructor() {

@@ -31,6 +31,8 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatAccordion, MatExpansionModule } from '@angular/material/expansion';
 import { MatRadioModule } from '@angular/material/radio';
 import { MatSelectModule } from '@angular/material/select';
+import { MatTableModule } from '@angular/material/table';
+import { MatSortModule } from '@angular/material/sort';
 
 import { MatIconModule } from '@angular/material/icon';
 import { MatSidenavModule } from '@angular/material/sidenav';
@@ -50,6 +52,7 @@ import { TooltipModule } from 'ngx-bootstrap/tooltip';
 import { ModalModule, BsModalService } from 'ngx-bootstrap/modal';
 import { SidePanelComponent } from './side-panel/side-panel.component';
 import { HtmlToPdf1Component } from './html-to-pdf-1/html-to-pdf-1.component';
+import { TableComponent } from './table/table.component';
 
 
 
@@ -68,13 +71,13 @@ import { HtmlToPdf1Component } from './html-to-pdf-1/html-to-pdf-1.component';
     ChildComponent, ReactivChildComponent, ExplanatoryNoteModificationsComponent, NumberAndYearComponent, GroupNestedIntoArrayComponent, 
     ExplanatoryNoteModificationsV2Component, ExplanatoryNoteIssueAuthorComponent, AddressComponent, OrganizationComponent, ForeignOrganizationComponent, 
     IpOrganizationComponent, PostAddressComponent, CustomComponentArrayComponent, NumberAndYearV2Component, CkEditorComponent, EditorJsComponent, 
-    NgxBootstrapComponent, ModalComponent, SidePanelComponent, HtmlToPdf1Component
+    NgxBootstrapComponent, ModalComponent, SidePanelComponent, HtmlToPdf1Component, TableComponent
   ],
   imports: [
     CommonModule, FormsModule, ReactiveFormsModule, BrowserModule, BrowserAnimationsModule, RouterModule, HttpClientModule,
 
     MatSlideToggleModule, MatButtonModule, MatCardModule, MatInputModule, MatFormFieldModule, MatExpansionModule, MatAccordion, MatRadioModule, 
-    MatSelectModule, MatIconModule, MatToolbarModule, MatSidenavModule, MatListModule, 
+    MatSelectModule, MatTableModule,  MatSortModule , MatIconModule, MatToolbarModule, MatSidenavModule, MatListModule, 
     
     CKEditorModule, TooltipModule, 
 
@@ -84,7 +87,7 @@ import { HtmlToPdf1Component } from './html-to-pdf-1/html-to-pdf-1.component';
     ChildComponent, ReactivChildComponent, ExplanatoryNoteModificationsComponent, NumberAndYearComponent, GroupNestedIntoArrayComponent, 
     ExplanatoryNoteModificationsV2Component, ExplanatoryNoteIssueAuthorComponent, AddressComponent, OrganizationComponent, ForeignOrganizationComponent, 
     IpOrganizationComponent, PostAddressComponent, CustomComponentArrayComponent, NumberAndYearV2Component, CkEditorComponent, EditorJsComponent, 
-    NgxBootstrapComponent, ModalComponent, SidePanelComponent, HtmlToPdf1Component
+    NgxBootstrapComponent, ModalComponent, SidePanelComponent, HtmlToPdf1Component, TableComponent
   ],
   providers: [BsModalService]
 

@@ -1,10 +1,10 @@
 import {
   FormsModule,
   NG_VALUE_ACCESSOR
-} from "./chunk-Q26EEMVG.js";
+} from "./chunk-VGDVH24S.js";
 import {
   CommonModule
-} from "./chunk-NNHSEQJ4.js";
+} from "./chunk-YWIITRPA.js";
 import {
   Component,
   ElementRef,
@@ -23,14 +23,14 @@ import {
   ɵɵdefineNgModule,
   ɵɵdirectiveInject,
   ɵɵtemplate
-} from "./chunk-WJI74WZ2.js";
+} from "./chunk-BUYUE6AN.js";
 import {
   __async,
   __spreadProps,
   __spreadValues
 } from "./chunk-4KQ2WF6L.js";
 
-// node_modules/@ckeditor/ckeditor5-integrations-common/dist/index.js
+// ../../../../node_modules/@ckeditor/ckeditor5-integrations-common/dist/index.js
 function O(e, {
   timeOutAfter: t = 500,
   retryAfter: r = 100
@@ -343,7 +343,7 @@ function F(e) {
   }));
 }
 
-// node_modules/@ckeditor/ckeditor5-angular/fesm2022/ckeditor-ckeditor5-angular.mjs
+// ../../../../node_modules/@ckeditor/ckeditor5-angular/fesm2022/ckeditor-ckeditor5-angular.mjs
 function CKEditorComponent_ng_template_0_Template(rf, ctx) {
 }
 var ANGULAR_INTEGRATION_READ_ONLY_LOCK_ID = "Lock from Angular integration (@ckeditor/ckeditor5-angular)";

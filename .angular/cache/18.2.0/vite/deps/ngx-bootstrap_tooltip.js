@@ -6,10 +6,10 @@ import {
   getBsVer,
   parseTriggers,
   warnOnce
-} from "./chunk-XZJIFW7P.js";
+} from "./chunk-CNZNRO6Q.js";
 import {
   CommonModule
-} from "./chunk-NNHSEQJ4.js";
+} from "./chunk-YWIITRPA.js";
 import {
   ChangeDetectionStrategy,
   Component,
@@ -41,10 +41,10 @@ import {
   ɵɵelementStart,
   ɵɵprojection,
   ɵɵprojectionDef
-} from "./chunk-WJI74WZ2.js";
+} from "./chunk-BUYUE6AN.js";
 import "./chunk-4KQ2WF6L.js";
 
-// node_modules/ngx-bootstrap/tooltip/fesm2022/ngx-bootstrap-tooltip.mjs
+// ../../../../node_modules/ngx-bootstrap/tooltip/fesm2022/ngx-bootstrap-tooltip.mjs
 var _c0 = ["*"];
 var _TooltipConfig = class _TooltipConfig {
   constructor() {

@@ -1,6 +1,6 @@
 import "./chunk-4KQ2WF6L.js";
 
-// node_modules/ckeditor5/dist/translations/ru.js
+// ../../../../node_modules/ckeditor5/dist/translations/ru.js
 var ru_default = {
   "ru": {
     "dictionary": {

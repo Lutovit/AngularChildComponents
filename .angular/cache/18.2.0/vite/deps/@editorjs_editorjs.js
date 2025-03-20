@@ -5,7 +5,7 @@ import {
   __spreadValues
 } from "./chunk-4KQ2WF6L.js";
 
-// node_modules/@editorjs/editorjs/dist/editorjs.mjs
+// ../../../../node_modules/@editorjs/editorjs/dist/editorjs.mjs
 (function() {
   "use strict";
   try {

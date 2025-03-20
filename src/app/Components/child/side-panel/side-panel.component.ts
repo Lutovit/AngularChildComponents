@@ -24,7 +24,7 @@ export class SidePanelComponent
   sidenav! : MatSidenav;  
 
   isCollapsed = true;
-  isMobile= true;
+  isMobile = true;
 
   @ViewChild("content", {static: false})
   content : ElementRef | undefined;
@@ -84,42 +84,15 @@ export class SidePanelComponent
 
   scrollToneededElement(id : string):void
   {
-
     let element = document.getElementById(id);
-    console.log(element);  
-
+    //console.log(element);  
     
     let rect = element?.getBoundingClientRect();
-    console.log(rect);
-
-    let curPos : [number, number] = this.scroller.getScrollPosition();
-    console.log(curPos);  
+    //console.log(rect);
 
     if(rect == null || rect == undefined) return;
 
-    //this.scroller.scrollToPosition([rect?.left, rect?.top + curPos[1] - this.heightOfNavBar]);
-
-  
-    //element?.scrollIntoView({ behavior: "smooth", block: "start", inline: "nearest" });
- 
- 
-    if(this.content != null)
-    {
-      this.scrollDispatcher.scrolled().subscribe((data : any) => 
-      {
-        this.current_Y = data.getElementRef().nativeElement.scrollTop;
-        console.log(this.current_Y);
-      
-      
-        
-      });
-    }
-
-
-    //this.scroller.scrollToPosition([rect?.left, rect?.top + this.current_Y - this.heightOfNavBar]); 
-
-    this.scrollingNativeElement?.scrollTo(rect?.left, rect?.top + this.current_Y - this.heightOfNavBar)
-
+    this.scrollingNativeElement?.scrollTo(rect?.left, rect?.top + this.current_Y - this.heightOfNavBar);
   }
 
 

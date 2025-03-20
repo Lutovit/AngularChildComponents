@@ -1,6 +1,6 @@
 import "./chunk-4KQ2WF6L.js";
 
-// node_modules/@editorjs/table/dist/table.mjs
+// ../../../../node_modules/@editorjs/table/dist/table.mjs
 (function() {
   var r2;
   "use strict";

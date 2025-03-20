@@ -37,6 +37,14 @@
         </span>
       </a>
 
+
+      <a mat-list-item [routerLink]="['/' + 'table']">
+        <span class="entry">
+          <mat-icon>grade</mat-icon>
+          <span *ngIf="!isCollapsed">Table</span>
+        </span>
+      </a>
+
       
       <a mat-list-item (click)="scrollToneededElement(arr[0])">
         <span class="entry">
